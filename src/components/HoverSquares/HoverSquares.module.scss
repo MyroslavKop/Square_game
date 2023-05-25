@@ -1,0 +1,15 @@
+@import "src/scss/index.scss";
+
+.info {
+  background-color: $info-main;
+  border-radius: 10px;
+  color: $info-text;
+  padding: 10px;
+  font-weight: 600;
+}
+.info_container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-top: 10px;
+}

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
-function App() {
+import PickMode from './components/PickModeForm/PickMode';
+import Game from './components/Game/Game';
+import HoverSquares from './components/HoverSquares/HoverSquares';
+
+import './scss/global.scss';
+
+const App = () => {
+  const [startGame, setStartGame] = useState(false);
+  const [selectedMode, setSelectedMode] = useState(null);
+  const [hoveredSquares, setHoveredSquares] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <PickMode
+        selectedMode={selectedMode}
+        setSelectedMode={setSelectedMode}
+        setStartGame={setStartGame}
+        setHoveredSquares={setHoveredSquares}
+      />
+      {startGame ? (
+        <div className="container">
+          <Game fieldSize={selectedMode} hoveredSquares={hoveredSquares} setHoveredSquares={setHoveredSquares} />
+          <HoverSquares fieldSize={selectedMode} hoveredSquares={hoveredSquares} />
+        </div>
+      ) : null}
+    </>
   );
-}
+};
 
 export default App;

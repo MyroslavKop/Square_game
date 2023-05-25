@@ -1,0 +1,32 @@
+@import "src/scss/index.scss";
+
+.mode {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.select {
+  border: 1px solid #000000;
+  height: 30px;
+  padding: 5px;
+}
+.button {
+  border-radius: 10px;
+  background-color: $button-color;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 14px;
+  max-width: 200px;
+  &:hover {
+    background-color: $button-hover-color;
+    transition: 0.25s;
+  }
+  &:disabled {
+    background-color: $disabled-color;
+  }
+}
