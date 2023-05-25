@@ -14,7 +14,6 @@ const Game = ({ fieldSize, hoveredSquares, setHoveredSquares }) => {
 
     for (let i = 0; i < fieldSize; i++) {
       for (let j = 0; j < fieldSize; j++) {
-        console.log(j);
         const squareIndex = i * fieldSize + j;
         const isSquareHovered = hoveredSquares.includes(squareIndex);
 
